@@ -203,7 +203,9 @@ class Rest_MediaController extends Zend_Rest_Controller
         } else if ($file) {
 
             //local file storage
-            $file->setDbDirectory(self::MUSIC_DIRS_STOR_PK);
+            // NOTE: Commenting this out just for the purpose of the custom upgrade
+            // because we don't want to set the directory for cloud files
+            //$file->setDbDirectory(self::MUSIC_DIRS_STOR_PK);
 
             $file->fromArray($whiteList, BasePeer::TYPE_FIELDNAME);
             //Our RESTful API takes "full_path" as a field, which we then split and translate to match
